@@ -1,5 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import API from "./utils/API.js";
+
+API.getEmployees()
+  .then(users => {
+    console.log(users)
+  });
 
 function App() {
   return (
