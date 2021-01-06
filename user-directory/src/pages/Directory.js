@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import API from "../utils/API";
 import UserContext from "../utils/userContext";
 
 function Directory() {
     const [users, setUsers] = useState({});
 
-    API.getEmployees()
-        .then(users => {
-            setUsers(users);
-            console.log(users)
-        });
+    useEffect(() => {
+        loadUsers();
+    }, []);
+
+    const loadUsers = () => {
+        API.getEmployees()
+            .then(users => {
+                setUsers(users);
+            });
+    }
 
     return (
         <UserContext.Provider value={{ users }}>

@@ -11,10 +11,9 @@ const obj = {
                     const results = users.map(user => {
                         return {
                             name: user.name,
-                            gender: user.gender,
+                            dob: user.dob,
                             email: user.email,
                             cell: user.cell,
-                            dob: user.dob
                         };
                     });
                     resolve(results);

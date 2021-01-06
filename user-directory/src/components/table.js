@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
-import UserContext from "../../utils/userContext";
+import React from "react";
+import UserContext from "../utils/userContext.js";
 
-function CardBody() {
-  const { user } = useContext(UserContext);
-  return (
-    <div>
-      <h4>Favorite language: {user.language}</h4>
-    </div>
-  );
+function Table() {
+    return (
+        <UserContext.Consumer>
+            {({ user }) => (
+                <div>
+                    <h4>Name: {}</h4>
+                </div>
+            )}
+        </UserContext.Consumer>
+    );
 }
 
-export default CardBody;
+export default Table;
