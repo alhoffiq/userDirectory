@@ -10,10 +10,10 @@ const obj = {
                     //console.log(users[0]);
                     const results = users.map(user => {
                         return {
-                            name: user.name,
-                            dob: user.dob,
+                            name: `${user.name.title}. ${user.name.first} ${user.name.last}`,
+                            dob: user.dob.date,
                             email: user.email,
-                            cell: user.cell,
+                            phone: user.cell,
                         };
                     });
                     resolve(results);
